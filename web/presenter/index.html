@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Présentation</title>
+  <link rel="stylesheet" href="presenter.css">
+</head>
+<body data-state="waiting">
+
+  <!-- Le flux du téléphone arrive ici dès la connexion et n'est JAMAIS recréé :
+       la slide caméra ne fait que le rendre visible => zéro délai au changement de slide. -->
+  <video id="cam" autoplay muted playsinline disablepictureinpicture></video>
+
+  <!-- ===================== LES SLIDES ===================== -->
+  <!-- Pour ajouter / modifier une slide : copie un <section class="slide"> ci-dessous.
+       La slide marquée data-camera affiche le retour caméra en plein écran.        -->
+  <main id="deck">
+
+    <!-- Slide 0 : connexion du téléphone (QR code) -->
+    <section class="slide slide-connect">
+      <div class="connect">
+        <div class="connect-left">
+          <div id="qr" class="qr"></div>
+        </div>
+        <div class="connect-right">
+          <h1>Connecte la caméra</h1>
+          <ol>
+            <li>Téléphone sur le <b>même Wi-Fi</b> que cet ordinateur</li>
+            <li>Scanne le <b>QR code</b></li>
+            <li>Accepte le certificat, puis <b>autorise la caméra</b></li>
+          </ol>
+          <p id="connect-status" class="connect-status"><span class="dot"></span><span class="txt">…</span></p>
+          <p id="phone-url" class="phone-url"></p>
+          <p class="hint">Quand c'est vert : <kbd>→</kbd> pour démarrer</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Début</p>
+      <h1>Slide 1</h1>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Suite</p>
+      <h1>Slide 2</h1>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Juste avant la caméra</p>
+      <h1>Slide 3</h1>
+    </section>
+
+    <!-- Slide caméra : plein écran, transparente pour laisser voir <video id="cam"> -->
+    <section class="slide slide-camera" data-camera>
+      <p class="nosignal">Pas de signal caméra</p>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">On reprend</p>
+      <h1>Slide 4</h1>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Presque fini</p>
+      <h1>Slide 5</h1>
+    </section>
+
+    <section class="slide slide-end">
+      <h1>Merci !</h1>
+      <p class="kicker">Fin de la présentation</p>
+    </section>
+
+  </main>
+
+  <!-- Indicateurs discrets -->
+  <div id="hud" hidden><span class="dot"></span><span class="txt"></span><span id="counter"></span></div>
+  <pre id="stats" hidden></pre>
+
+  <script src="/vendor/qrcode.js"></script>
+  <script src="presenter.js"></script>
+</body>
+</html>

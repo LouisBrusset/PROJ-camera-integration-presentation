@@ -1,0 +1,2 @@
+qrcode-generator 2.0.4 - Kazuhiko Arase - MIT
+https://www.npmjs.com/package/qrcode-generator

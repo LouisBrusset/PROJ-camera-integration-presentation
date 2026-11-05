@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Caméra</title>
+  <link rel="stylesheet" href="phone.css">
+</head>
+<body data-state="init">
+  <video id="preview" autoplay muted playsinline></video>
+
+  <header>
+    <span class="dot"></span>
+    <span id="status">Démarrage…</span>
+  </header>
+
+  <pre id="stats" hidden></pre>
+
+  <div id="error" hidden>
+    <p id="error-text"></p>
+    <button id="retry">Réessayer</button>
+  </div>
+
+  <footer>
+    <button id="flip">Changer de caméra</button>
+    <button id="info">Infos</button>
+  </footer>
+
+  <script src="phone.js"></script>
+</body>
+</html>
